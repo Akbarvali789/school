@@ -1,0 +1,46 @@
+{% extends 'index.html ' %}
+{% block title %}
+ <title>existingpage</title>
+{% endblock %}
+
+
+        
+    
+
+    
+
+
+{% block body %}
+
+<h1>{{title}}</h1>
+
+<table width="50%">
+    <thead>
+        <tr>
+        <th>S.No</th>
+        <th>NAME</th>
+        <th>STANDARD</th>
+        <th>SCHOOL</th>
+        <th>ADDRESS</th>
+        <th>EMAIL</th>
+        </tr>
+    </thead>
+    {% for i in queryset %}
+    <tbody style="border:1px solid black;">
+        <tr>
+            <td> {{ forloop.counter }}</td>
+            <td> {{i.name }}</td>
+            <td> {{ i.standard }}</td>
+            <td> {{ i.school }}</td>
+            <td> {{ i.address }}</td>
+            <td> {{ i.email }}</td>
+
+        </tr>
+    </tbody>
+    {% endfor %}
+
+
+</table>
+
+
+{% endblock %}
